@@ -31,6 +31,7 @@ set splitbelow
 set title
 set report=0
 set showtabline=2
+set diffopt+=context:99999
 syntax on
 filetype on
 filetype indent on
