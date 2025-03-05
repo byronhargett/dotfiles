@@ -14,6 +14,8 @@ alias mv='mv -iv'
 alias rm='rm -iv'
 
 # grep with color highlight and proper less behavior
+alias grec='grep --color=always'
+# grep with color highlight and proper less behavior
 alias gl='grepless'
 
 # make hexdump pretty
