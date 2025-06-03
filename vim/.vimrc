@@ -32,6 +32,8 @@ set title
 set report=0
 set showtabline=2
 set diffopt+=context:99999
+set termguicolors
+colorscheme wildcharm
 syntax on
 filetype on
 filetype indent on
