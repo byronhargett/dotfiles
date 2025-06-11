@@ -44,6 +44,6 @@ if command -v sdk &>/dev/null; then
   [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 fi
 
-if command -v starship &>/dev/null; then
+if command -v cargo &>/dev/null; then
   . "$HOME/.cargo/env"
 fi
