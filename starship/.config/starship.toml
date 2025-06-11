@@ -1,0 +1,39 @@
+
+format = """
+$time\
+$username\
+[@](#FFFFFF)\
+$hostname\
+$directory\
+$git_branch\
+$git_state\
+$git_status\
+$character
+"""
+
+[character]
+success_symbol = "[ \\[✔\\]:](green bold)"
+error_symbol = "[ \\[✘\\]:](red bold)"
+
+[username]
+format = "[\\[$user]($style)"
+style_user = "fg:green bold"
+show_always = true
+
+[hostname]
+ssh_only = false
+format = "[$hostname\\]](green bold)"
+
+[directory]
+style = "#00FFFF bold"
+format = " [$path]($style)"
+truncate_to_repo = false
+
+[git_branch]
+format = " [$symbol$branch]($style)"
+style = "bold bright-yellow"
+
+[time]
+disabled = false
+style = "fg:#FFFFFF bold bg:blue"
+format = "[$time]($style) "
