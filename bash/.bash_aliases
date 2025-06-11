@@ -1,20 +1,27 @@
-# Some useful Bash aliases
-# NOTE: If your bash startup files do not source .bash_aliases then you will
-#       have to correct that or source this file manually.
-
 # grep with color highlight and proper less behavior
 # usage: grepless what where
 grepless() {
-    grep -r --color=always $1 $2 | grep -v "Binary file" | less -R
+  grep -r --color=always $1 $2 | grep -v "Binary file" | less -R
 }
+
+if [ -x /usr/bin/dircolors ]; then
+  test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+  alias ls='ls --color=auto'
+  alias grep='grep --color=auto'
+  alias fgrep='fgrep --color=auto'
+  alias egrep='egrep --color=auto'
+fi
+
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+alias lh='ll -h'
 
 # safe and loud file operations
 alias cp='cp -iv'
 alias mv='mv -iv'
 alias rm='rm -iv'
 
-# grep with color highlight and proper less behavior
-alias grec='grep --color=always'
 # grep with color highlight and proper less behavior
 alias gl='grepless'
 
@@ -34,8 +41,14 @@ alias svim='sudo vim'
 # simple untar
 alias untar='tar xzvf'
 
-# often used ls
-alias lh='ll -h'
-
 # list listening ports
 alias ports='sudo netstat -anp | grep tcp | grep LISTEN'
+
+# Git stuff
+alias gd='git diff'
+alias gbl='git blame'
+alias gba='git branch -a'
+alias gcm='git commit'
+alias gcs='git commit -S'
+alias glog='git log'
+alias gst='git status'
