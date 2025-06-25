@@ -39,9 +39,9 @@ if command -v starship &>/dev/null; then
   eval "$(starship init bash)"
 fi
 
-if command -v sdk &>/dev/null; then
-  export SDKMAN_DIR="$HOME/.sdkman"
-  [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+if [ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]; then
+    export SDKMAN_DIR="$HOME/.sdkman"
+    source "$SDKMAN_DIR/bin/sdkman-init.sh"
 fi
 
 if command -v cargo &>/dev/null; then
