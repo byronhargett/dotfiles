@@ -1,8 +1,3 @@
-# grep with color highlight and proper less behavior
-# usage: grepless what where
-grepless() {
-  grep -r --color=always $1 $2 | grep -v "Binary file" | less -R
-}
 
 if [ -x /usr/bin/dircolors ]; then
   test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -22,9 +17,6 @@ alias cp='cp -iv'
 alias mv='mv -iv'
 alias rm='rm -iv'
 
-# grep with color highlight and proper less behavior
-alias gl='grepless'
-
 # make hexdump pretty
 alias hd='hexdump -C'
 
@@ -41,14 +33,12 @@ alias svim='sudo vim'
 # simple untar
 alias untar='tar xzvf'
 
-# list listening ports
-alias ports='sudo netstat -anp | grep tcp | grep LISTEN'
-
 # Git stuff
-alias gd='git diff'
+alias gb='git branch'
 alias gbl='git blame'
-alias gba='git branch -a'
-alias gcm='git commit'
-alias gcs='git commit -S'
-alias glog='git log'
-alias gst='git status'
+alias gd='git diff'
+# Note: Hides gc executable
+alias gc='git commit'
+# Note: Hides Ghostscript executable
+alias gl='git log'
+alias gs='git status'
