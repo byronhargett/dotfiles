@@ -8,8 +8,8 @@ shopt -s checkwinsize
 
 shopt -s histappend
 HISTCONTROL=ignoreboth
-HISTSIZE=-1
-HISTFILESIZE=-1
+HISTSIZE=100000
+HISTFILESIZE=100000
 HISTTIMEFORMAT="[%c] "
 
 # make less more friendly for non-text input files, see lesspipe(1)

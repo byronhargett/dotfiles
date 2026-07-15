@@ -15,6 +15,16 @@ GNU stow(able) dotfiles I find useful.
 ```sh
 git clone <this repo> ~/dotfiles
 cd ~/dotfiles
+stow -n --no-folding bash tmux vim starship mc   # dry run: lists any conflicts first
+```
+
+Fresh Ubuntu/Debian accounts are created with a real `~/.bashrc` already in
+place (copied from `/etc/skel`). Stow refuses to overwrite a real file with
+a symlink, so stowing `bash` on a brand-new machine will abort with a
+conflict on `.bashrc` unless that file is moved out of the way first:
+
+```sh
+mv ~/.bashrc ~/.bashrc.skel-backup   # only if the dry run reports a .bashrc conflict
 stow --no-folding bash tmux vim starship mc
 ```
 
